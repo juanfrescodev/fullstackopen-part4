@@ -88,4 +88,34 @@ const emptyList = []
     const result = listHelper.totalLikes(emptyList)
     assert.strictEqual(result, 0)
     })
+
+})
+
+describe('favorite blog', () => {
+  test('devuelve el blog con más likes', () => {
+    const blogs = [
+      {
+        title: 'React patterns',
+        author: 'Michael Chan',
+        likes: 7
+      },
+      {
+        title: 'Go To Statement Considered Harmful',
+        author: 'Edsger W. Dijkstra',
+        likes: 5
+      },
+      {
+        title: 'Canonical string reduction',
+        author: 'Edsger W. Dijkstra',
+        likes: 12
+      }
+    ]
+
+    const result = listHelper.favoriteBlog(blogs)
+    assert.deepStrictEqual(result, {
+      title: 'Canonical string reduction',
+      author: 'Edsger W. Dijkstra',
+      likes: 12
+    })
+  })
 })
